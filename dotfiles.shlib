@@ -1,0 +1,17 @@
+#!/bin/sh
+
+declare -a dotfiles=(
+    alias
+    bashrc
+    gitconfig
+    gitignore_global
+    tmux.conf
+    twmrc
+    xmonad
+    Xmodmap
+    Xresources
+    Xresources.d
+
+    config/alacritty
+    config/git-default-template
+)

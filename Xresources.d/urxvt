@@ -1,0 +1,43 @@
+!! See also https://wiki.archlinux.org/index.php/Rxvt-unicode#Configuration
+
+!! ``myFont`` and ``myFontSize`` are defined in ~/.Xresources
+URxvt*font: xft:myFont:medium:size=myFontSize
+
+!! Scrollbar
+URxvt.scrollStyle:  rxvt
+URxvt.scrollBar:    false
+
+!! Cursor
+URxvt.cursorBlink:      true
+URxvt.cursorUnderline:  false
+
+!! FIXED: diable CTRL+SHIFT
+!!  https://en.wikipedia.org/wiki/ISO/IEC_14755
+!!  - ISO 14755 Mode: no need for typing Unicode codepoint by hand
+!!  - Keycap Picture Insert Mode: What is this?
+URxvt.iso14755:     false
+URxvt.iso14755_52:  false
+
+!! KISS: Disable Perl extension to avoid hidden surprise
+URxvt.perl-ext:
+URxvt.perl-ext-common:
+
+!! KISS: Copy & Paste
+URxvt.clipboard.autocopy: true
+
+!! ???
+!URxvt.clipboard.copycmd:  xsel -ib
+!URxvt.clipboard.pastecmd: xsel -ob
+! -- OR --
+!URxvt.clipboard.copycmd:  xclip -i -selection clipboard
+!URxvt.clipboard.pastecmd: xclip -o -selection clipboard
+
+!! ???
+!URxvt.copyCommand:     xsel -ib
+!URxvt.pasteCommand:    xsel -ob
+! -- OR --
+!URxvt.copyCommand:     xclip -i -selection clipboard
+!URxvt.pasteCommand:    xclip -o -selection clipboard
+
+!! UNUSED: Reduce gap between font glyph
+!URxvt*letterSpace: -1

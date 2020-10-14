@@ -1,0 +1,22 @@
+!! Font Family      | XTerm*faceSize | Alacritty*font.size (*)
+!! ---------------- | -------------- | -------------------
+!! Inconsolata      | 24             | 23.0
+!! Source Code Pro  | 24             | 23.0
+!! Hack             |                |
+!! Droid Sans Mono  |                |
+!!
+!! (*): Alacritty*font.size seems to depend on video card and driver.
+!!      On GTX 1050 Ti with nvidia driver, Alacritty*font.size=23.0
+!!      is equivalent to Xterm*faceSize=24.
+
+#define myFont      Inconsolata
+#define myFontSize  24
+
+!! Global Dark Background
+*foreground:   white
+*background:   black
+*cursorColor:  white
+
+!! NOTE: ``xrdb`` always starts relative to ``$HOME``, do not add "$HOME" or "~/"
+#include ".Xresources.d/urxvt"
+#include ".Xresources.d/xterm"

@@ -1,0 +1,19 @@
+!! https://wiki.archlinux.org/index.php/Xterm#Configuration
+XTerm*termName:                 xterm-256color
+XTerm*vt100.backarrowKey:       false
+XTerm*vt100.locale:             true
+XTerm*vt100.metaSendsEscape:    true
+XTerm*vt100.saveLines:          10000
+XTerm*vt100.scrollBar:          false
+XTerm*ttyModes:                 erase ^?
+
+!! ``myFont`` and ``myFontSize`` are defined in ~/.Xresources
+XTerm*faceName:     myFont
+XTerm*faceSize:     myFontSize
+XTerm*renderFont:   true
+
+!! http://futurile.net/2016/06/14/xterm-setup-and-truetype-font-configuration/
+XTerm*VT100.Translations: #override \
+    Ctrl <Key> minus: smaller-vt-font() \n\
+    Ctrl <Key> plus: larger-vt-font() \n\
+    Ctrl <Key> 0: set-vt-font(d)

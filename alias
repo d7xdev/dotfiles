@@ -1,0 +1,28 @@
+unalias -a
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias +="pushd ."
+alias -- -="popd"
+
+alias ls="ls -F --color=auto"
+alias la="ls -Altr"
+
+alias d="docker"
+alias di="docker images"
+alias dr="docker run --interactive --tty --rm "
+alias dx="xhost local: ; docker run --rm --net=host -e DISPLAY=${DISPLAY} "
+
+alias c="cargo"
+alias m="mix"
+alias f="find . -iname "
+alias v="vim -R"
+
+alias ispell="aspell -a"
+
+alias mkae="make"
+alias maek="make"
+
+alias gcd="git checkout"
+alias gdf="git diff"
+alias gst="git status"
