@@ -1,5 +1,5 @@
 " Modified from Vim Bootstrap generated configuration file
-" Source: https://vim-bootstrap.com/
+" Reference: https://vim-bootstrap.com/
 
 "*****************************************************************************
 "" Plug install packages
@@ -14,6 +14,7 @@ call plug#end()
 
 filetype plugin indent on
 
+
 "*****************************************************************************
 "" Visual Settings
 "*****************************************************************************
@@ -22,14 +23,29 @@ syntax on
 set ruler
 set number
 
-set t_Co=256
-set t_ut=
+if ($COLORTERM == 'truecolor' || $COLORTERM == '24bit')
+    " Enable 24-bit color
+    " Reference: https://gist.github.com/XVilka/8346728
+    set termguicolors
+else
+    " Fallback to 256-color palette
+    set t_Co=256
+    " Disable Background Color Erase to avoid background bleeding
+    " on 256-color palette Tmux and GNU Screen.
+    " Reference: https://sunaku.github.io/vim-256color-bce.html
+    set t_ut=
+endif
+
 "colorscheme codedark
 colorscheme dracula
 
 set textwidth=80
 set colorcolumn=+1
-highlight ColorColumn ctermbg=DarkGray
+
+" when terminal:
+"   256-color palette | 16-color -> ctermbg = DarkGray
+"   24-bit color | true color -> guibg	 = some blueish gray
+highlight ColorColumn ctermbg=DarkGray guibg=#44475a
 
 " Make long text lines more tolerable (often found in Markdown files)
 " - Always wrap long lines.
@@ -49,6 +65,7 @@ set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
 " search will center on the line it's found in.
 nnoremap n nzzzv
 nnoremap N Nzzzv
+
 
 "*****************************************************************************
 "" Abbreviations
