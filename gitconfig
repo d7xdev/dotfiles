@@ -14,3 +14,4 @@
     date = iso
 [init]
     templateDir = ~/.config/git-default-template
+    defaultBranch = main
