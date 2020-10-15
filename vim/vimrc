@@ -1,0 +1,97 @@
+" Modified from Vim Bootstrap generated configuration file
+" Source: https://vim-bootstrap.com/
+
+"*****************************************************************************
+"" Plug install packages
+"*****************************************************************************
+
+call plug#begin(expand('~/.vim/plugged'))
+Plug 'dracula/vim', { 'as': 'dracula' }
+call plug#end()
+
+filetype plugin indent on
+
+"*****************************************************************************
+"" Visual Settings
+"*****************************************************************************
+
+syntax on
+set ruler
+set number
+
+set t_Co=256
+set t_ut=
+colorscheme dracula
+
+set textwidth=80
+set colorcolumn=+1
+highlight ColorColumn ctermbg=DarkGray
+
+" Make long text lines more tolerable (often found in Markdown files)
+" - Always wrap long lines.
+" - Wrap lines at 'breakat' rather than at last char that fits on screen.
+" - Remap navigation thru "displayed" lines rather than "real" lines.
+set wrap
+set linebreak
+noremap j gj
+noremap k gk
+noremap 0 g0
+noremap $ g$
+
+set laststatus=2
+set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
+
+" Search mappings: These will make it so that going to the next one in a
+" search will center on the line it's found in.
+nnoremap n nzzzv
+nnoremap N Nzzzv
+
+"*****************************************************************************
+"" Abbreviations
+"*****************************************************************************
+
+" reduce file pollution named "1"
+cnoreabbrev w1 w!
+
+" Fix Non-intuitive H-split and V-split for new Vim window
+" Credit: ThePrimeagen
+set splitbelow splitright
+
+" Default Vim Help open in horizontal split (ie. TOP and BOTTOM*).
+" Command abbreviation for vertical split (ie. LEFT and RIGHT*).
+cnoreabbrev vh vertical help
+
+
+"*****************************************************************************
+"" Autocmd Rules
+"*****************************************************************************
+
+autocmd! BufRead,BufNewFile Dockerfile.*    set syntax=dockerfile
+autocmd! BufRead,BufNewFile *Xresources.d/* set syntax=xdefaults
+
+" Auto-delete trailing whitespaces on save
+" Credit: ThePrimeagen
+autocmd! BufWritePre * %s/\s\+$//e
+
+" Auto-Reload after editing Vim config
+" Caveat: Be careful to avoid syntax error. Fix config and restart Vim to recover.
+autocmd! BufWritePost   ~/.vimrc,vimrc  :source %
+
+
+"*****************************************************************************
+"" Mappings
+"*****************************************************************************
+
+" anti-RSI
+nnoremap ; :
+vnoremap ; :
+
+" Default `ESC` key is ergonomically RSI-prone on regular QWERTY layout
+" Overly-used `C-c` (chord:5-2) often conflicts with other programs.
+" `C-[` (chord:5-5) requires two hands.
+" NOTE: Quick "jj" is `ESC`. Slow "j", wait 1 sec, "j" can insert "jj" text
+inoremap jj <ESC>
+
+" Function keys for cycling Previous/Next buffers
+nnoremap <F6> :bprevious<CR>
+nnoremap <F7> :bnext<CR>

@@ -7,8 +7,9 @@ declare -a dotfiles=(
     gitignore_global
     tmux.conf
     twmrc
-    xmonad
+    vim
     Xmodmap
+    xmonad
     Xresources
     Xresources.d
 
