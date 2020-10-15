@@ -1,0 +1,83 @@
+diff --git a/config/alacritty/alacritty.yml b/config/alacritty/alacritty.yml
+index 58b01ba..6b7c72e 100644
+--- a/config/alacritty/alacritty.yml
++++ b/config/alacritty/alacritty.yml
+@@ -109,12 +109,13 @@ debug.render_timer: false
+ # inverted cell colors (ie. cell background color over cell foreground color).
+ custom_cursor_colors: false
+ 
+-# Colors (Xterm 16 colors)
++# Colors (One Dark)
++# Source: https://github.com/joshdick/onedark.vim/blob/master/term/One%20Dark.alacritty
+ colors:
+   # Default colors
+   primary:
+-    background: '0x000000'
+-    foreground: '0xffffff'
++    foreground: '0xabb2bf'
++    background: '0x282c34'
+ 
+   # Cursor colors
+   #
+@@ -122,42 +123,32 @@ colors:
+   # the cursor color will be the inverse of the cell color.
+   #
+   # DEBUG: Set `cursor.text: '0xFF0000'` for easier testing.
++  # Cursor colors
+   cursor:
+-    text: '0x000000'
+-    cursor: '0xffffff'
++    text: '0x5c6370'
++    cursor: '0xabb2bf'
+ 
+   # Normal colors
+   normal:
+-    black:   '0x000000'
+-    red:     '0xff0000'
+-    green:   '0x00ff00'
+-    yellow:  '0xffff00'
+-    blue:    '0x0000ff'
+-    magenta: '0xff00ff'
+-    cyan:    '0x00ffff'
+-    white:   '0xffffff'
++    black:   '0x5c6370'
++    red:     '0xe06c75'
++    green:   '0x98c379'
++    yellow:  '0xe5c07b'
++    blue:    '0x61afef'
++    magenta: '0xc678dd'
++    cyan:    '0x56b6c2'
++    white:   '0xabb2bf'
+ 
+   # Bright colors
+   bright:
+-    black:   '0x000000'
+-    red:     '0xff0000'
+-    green:   '0x00ff00'
+-    yellow:  '0xffff00'
+-    blue:    '0x0000ff'
+-    magenta: '0xff00ff'
+-    cyan:    '0x00ffff'
+-    white:   '0xffffff'
+-
+-  # Dim colors (Optional)
+-  dim:
+-    black:   '0x808080' # Gray
+-    red:     '0x800000'
+-    green:   '0x008000'
+-    yellow:  '0x808000'
+-    blue:    '0x000080'
+-    magenta: '0x800080'
+-    cyan:    '0x008080'
+-    white:   '0xc0c0c0' # Silver
++    black:   '0x4b5263'
++    red:     '0xbe5046'
++    green:   '0x98c379'
++    yellow:  '0xd19a66'
++    blue:    '0x61afef'
++    magenta: '0xc678dd'
++    cyan:    '0x56b6c2'
++    white:   '0x3e4452'
+ 
+ # Visual Bell
+ #
