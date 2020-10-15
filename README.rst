@@ -2,31 +2,32 @@
  My Configuration Files
 ========================
 
-Point of Interests:
+Points of Interest:
 
 - Alacritty_
 - Tmux_  (**OUTDATED** since migration to XMonad)
-- TODO: Vim configuration
+- Vim_
 - XMonad_
 
-.. _Alacritty: config/alacritty/alacritty.yml
-.. _Tmux: tmux.conf
-.. _XMonad: xmonad/xmonad.hs
+.. _Alacritty:  config/alacritty/alacritty.yml
+.. _Tmux:       tmux.conf
+.. _Vim:        vim/vimrc
+.. _XMonad:     xmonad/xmonad.hs
 
 
 Installation
 ============
 
-::
+To install from GitHub::
+
     git checkout https://github.com/d7xdev/dotfiles
 
     cd dotfiles
     ./install.sh
 
-Uninstall
----------
+To uninstall::
 
-::
+    cd dotfiles
     ./uninstall.sh
 
 
