@@ -72,7 +72,19 @@ noremap 0 g0
 noremap $ g$
 
 set laststatus=2
-set statusline=%F%m%r%h%w%=(%{&ff}/%Y)\ (line\ %l\/%L,\ col\ %c)
+
+" Customized Status Line
+" - %F      Absolute Filename path
+" - %l      Current Line number
+" - %c      Current Column number
+"
+" - %m      Modified flag
+" - %r      Readonly flag
+"
+" - %=      Right-Align
+" - %l\/%L  Ratio Current Line number of Total Lines
+" - %P      Percentage Current Line number of Total Lines
+set statusline=%F:%l:%c\ %m%r%=%l\/%L\ (%P)
 
 " Search mappings: These will make it so that going to the next one in a
 " search will center on the line it's found in.
