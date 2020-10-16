@@ -4,3 +4,6 @@
 [submodule "vim/plugged/vim-code-dark"]
 	path = vim/plugged/vim-code-dark
 	url = https://github.com/tomasiser/vim-code-dark.git
+[submodule "vim/plugged/vim-dracula"]
+	path = vim/plugged/vim-dracula
+	url = https://github.com/d7xdev/vim-dracula
