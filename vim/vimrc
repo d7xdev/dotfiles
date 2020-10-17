@@ -126,8 +126,7 @@ autocmd! BufRead,BufNewFile *Xresources.d/* set syntax=xdefaults
 autocmd! BufWritePre * %s/\s\+$//e
 
 " Auto-Reload after editing Vim config
-" Caveat: Be careful to avoid syntax error. Fix config and restart Vim to recover.
-autocmd! BufWritePost   ~/.vimrc,vimrc  :source %
+autocmd! BufWritePost $MYVIMRC source $MYVIMRC
 
 
 "*****************************************************************************
