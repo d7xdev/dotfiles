@@ -27,6 +27,12 @@ set softtabstop=0
 set shiftwidth=4
 set expandtab
 
+" Searching
+set hlsearch
+set incsearch
+set ignorecase
+set smartcase
+
 
 "*****************************************************************************
 "" Visual Settings
