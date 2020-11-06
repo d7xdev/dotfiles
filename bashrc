@@ -1,5 +1,8 @@
 export LANG=C.UTF-8
 
+## Fix locale date/time format
+export LC_TIME="en_US.UTF-8"
+
 ## Fix XDG user environment variables missing on XMonad desktop
 export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
