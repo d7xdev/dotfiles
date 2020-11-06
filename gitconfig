@@ -1,14 +1,14 @@
 [credential]
-    helper = cache --timeout=600
+	helper = cache --timeout=600
 [alias]
-    lg = log --all --oneline --graph --decorate
-    ci = commit
-    rclone = clone --recurse-submodules
+	lg = log --all --oneline --graph --decorate
+	ci = commit
+	rclone = clone --recurse-submodules
 [core]
-    excludesfile = ~/.gitignore_global
-    autocrlf = false
+	excludesfile = ~/.gitignore_global
+	autocrlf = false
 [log]
-    date = iso
+	date = iso
 [init]
-    templateDir = ~/.config/git-default-template
-    defaultBranch = main
+	templateDir = ~/.config/git-default-template
+	defaultBranch = main
