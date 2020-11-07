@@ -58,8 +58,18 @@ endif
 "colorscheme codedark
 colorscheme dracula
 
-set textwidth=80
+set textwidth=79
 set colorcolumn=+1
+
+" `formatoptions` (default was "tcq"). See `fo-table` for option description.
+"  -t   Auto-wrap text using textwidth
+"  -c   Auto-wrap comments using textwidth, inserting the current comment
+"       leader automatically.
+"  -q   Allow formatting of comments with "gq".
+"  -1   Don't break a line after a one-letter word.  It's broken before it
+"       instead (if possible).
+"  -j   Where it makes sense, remove a comment leader when joining lines.
+set formatoptions=tcq1j
 
 " when terminal:
 "   256-color palette | 16-color -> ctermbg = DarkGray
