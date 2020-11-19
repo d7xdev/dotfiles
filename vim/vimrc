@@ -143,6 +143,14 @@ augroup gitconfig
     autocmd Syntax gitconfig set tabstop=8 | set shiftwidth=8 | set noexpandtab
 augroup END
 
+" Rust style guide and `rustfmt` set max line width to 100 chars.
+" But I still want comment block to be formatted within 80 chars.
+" Overriding Vim Rust `textwidth=99`, and adding column #100 highlight.
+" Reference: https://github.com/nrc/rfcs/blob/style-guide/style-guide/README.md#formatting-conventions
+augroup rust
+    autocmd Syntax rust set textwidth=79 | set colorcolumn=+1,+21
+augroup END
+
 
 "*****************************************************************************
 "" Mappings
