@@ -24,6 +24,11 @@ import XMonad.Hooks.EwmhDesktops(fullscreenEventHook,ewmh)
 import XMonad.Layout.NoBorders(noBorders,smartBorders)
 
 
+-- Insert new window to Below (and Right)
+-- https://hackage.haskell.org/package/xmonad-contrib-0.16/docs/XMonad-Hooks-InsertPosition.html
+import XMonad.Hooks.InsertPosition
+
+
 ------------------------------------------------------------------------
 -- My Basic Stuff
 ------------------------------------------------------------------------
@@ -100,6 +105,10 @@ main = do
         -- Hooks, Layouts
       , handleEventHook     = fullscreenEventHook   -- handle fullscreen games
       , layoutHook          = myLayout
-      , manageHook          = myManageHook
+        -- From docs: You should you put the manageHooks that use doShift to take
+        -- effect before insertPosition, so that the window order will be consistent.
+        -- Because ManageHooks compose from right to left (like function composition .),
+        -- this means that insertPosition should be the leftmost ManageHook.
+      , manageHook          = insertPosition Below Newer <+> myManageHook
       }
 
